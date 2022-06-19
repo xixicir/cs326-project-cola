@@ -17,3 +17,4 @@ On the *wheelx*, in order for customers to find their perfect wheels, they can u
 **Description:** The content in the main page is a brief introduction of our website. Each title in the navigation bar lines to a specific subpage. All pages are basically functional except the account page. The *View All* under *GALLERY* content also links to the gallery page.
 
 ### **Link of the Video**
+https://drive.google.com/file/d/1AaFqR0bbbIfTMLUbwszuFN9DXzleY-eg/view
