@@ -7,8 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-    <link rel="stylesheet" href="/main.css">
-    <script type="module" src="product.js" defer></script>
+    <link rel="stylesheet" href="../main.css">
+    <script type="module" src="../main.js" defer></script>
   </head>
 
   <body>
@@ -24,11 +24,11 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link text-light fs-3" href="/index.html">Home</a>
+              <a class="nav-link text-light fs-3" href="home.html">Home</a>
               <a class="nav-link text-light fs-3 active" aria-current="page" href="product.html">Product</a>
               <a class="nav-link text-light fs-3" href="gallery.html">Gallery</a>
               <a class="nav-link text-light fs-3" href="support.html">Support</a>
-              <a class="nav-link text-light fs-3" href="account.html">My Account</a>
+              <a class="nav-link text-light fs-3" href="inquiries.html">Inquiries</a>
             </div>
           </div>
         </div>
@@ -38,6 +38,13 @@
     <section>
       <div class="container"> 
         <div class="dropdown text-end col-sm-12">
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-light" id="19i">19"</button>
+            <button type="button" class="btn btn-outline-light" id="20i">20"</button>
+            <button type="button" class="btn btn-outline-light" id="21i">21"</button>
+            <button type="button" class="btn btn-outline-light" id="22i">22"</button>
+            <button type="button" class="btn btn-outline-light" id="reset">Reset</button>
+          </div>
           <button class="btn btn-secondary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Filter</button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li><button class="dropdown-item" type="button" id="all">All</button></li>
@@ -55,43 +62,43 @@
           </div>
           <div class="row">
             <div class="col-sm-auto"><div class="fs-5 text-light">PRICE:</div></div>
-            <div class="col-sm-auto"><div class="fs-5 text-light">$2800 ea. - $3100 ea.</div></div>
+            <div class="col-sm-auto"><div class="fs-5 text-light" id="fmsprice">$2800 ea. - $3100 ea.</div></div>
           </div>
           <br>
           <div class="row">
             <div class="col-sm-3">
-              <img src="/images/25.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/25.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">FM-1</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/26.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/26.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">FM-2</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/27.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/27.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">FM-3</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/28.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/28.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">FM-4</p>
             </div>
           </div>
           <br>
           <div class="row">
             <div class="col-sm-3">
-              <img src="/images/29.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/29.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">FM-5</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/30.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/30.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">FM-6</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/31.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/31.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">FM-7</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/32.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/32.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">FM-8</p>
             </div>
           </div>
@@ -103,24 +110,24 @@
           </div>
           <div class="row">
             <div class="col-sm-auto"><div class="fs-5 text-light">PRICE:</div></div>
-            <div class="col-sm-auto"><div class="fs-5 text-light">$3200 ea. - $3500 ea.</div></div>
+            <div class="col-sm-auto"><div class="fs-5 text-light" id="f2sprice">$3200 ea. - $3500 ea.</div></div>
           </div>
           <br>
           <div class="row">
             <div class="col-sm-3">
-              <img src="/images/10.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/10.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">F2-1</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/11.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/11.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">F2-2</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/12.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/12.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">F2-3</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/13.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/13.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">F2-4</p>
             </div>
           </div>
@@ -132,24 +139,24 @@
           </div>
           <div class="row">
             <div class="col-sm-auto"><div class="fs-5 text-light">PRICE:</div></div>
-            <div class="col-sm-auto"><div class="fs-5 text-light">$3250 ea. - $3550 ea.</div></div>
+            <div class="col-sm-auto"><div class="fs-5 text-light" id="f3sprice">$3250 ea. - $3550 ea.</div></div>
           </div>
           <br>
           <div class="row">
             <div class="col-sm-3">
-              <img src="/images/21.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/21.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">F3-1</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/22.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/22.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">F3-2</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/23.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/23.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">F3-3</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/24.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/24.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">F3-4</p>
             </div>
           </div>
@@ -161,20 +168,20 @@
           </div>
           <div class="row">
             <div class="col-sm-auto"><div class="fs-5 text-light">PRICE:</div></div>
-            <div class="col-sm-auto"><div class="fs-5 text-light">$700 ea. - $850 ea.</div></div>
+            <div class="col-sm-auto"><div class="fs-5 text-light" id="fsprice">$700 ea. - $850 ea.</div></div>
           </div>
           <br>
           <div class="row">
             <div class="col-sm-3">
-              <img src="/images/18.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/18.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">FS-1</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/19.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/19.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">FS-2</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/20.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/20.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">FS-3</p>
             </div>
           </div>
@@ -186,24 +193,24 @@
           </div>
           <div class="row">
             <div class="col-sm-auto"><div class="fs-5 text-light">PRICE:</div></div>
-            <div class="col-sm-auto"><div class="fs-5 text-light">$6300 ea. - $6900 ea.</div></div>
+            <div class="col-sm-auto"><div class="fs-5 text-light" id="cfsprice">$6300 ea. - $6900 ea.</div></div>
           </div>
           <br>
           <div class="row">
             <div class="col-sm-3">
-              <img src="/images/14.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/14.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">CF-1</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/15.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/15.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">CF-2</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/16.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/16.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">CF-3</p>
             </div>
             <div class="col-sm-3"> 
-              <img src="/images/17.png" class="rounded img-responsive" style="width:100%" alt="Image">
+              <img src="../images/17.png" class="rounded img-responsive" style="width:100%" alt="Image">
               <p class="text-light fw-bold">CF-4</p>
             </div>
           </div>
