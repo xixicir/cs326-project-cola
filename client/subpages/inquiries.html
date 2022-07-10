@@ -8,6 +8,7 @@
     rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
     <link rel="stylesheet" href="../main.css">
+    <script type="module" src="../main.js"></script>
   </head>
 
   <body>
@@ -23,11 +24,12 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link text-light fs-3" href="home.html">Home</a>
-              <a class="nav-link text-light fs-3" href="product.html">Product</a>
-              <a class="nav-link text-light fs-3" href="gallery.html">Gallery</a>
-              <a class="nav-link text-light fs-3"  href="support.html">Support</a>
-              <a class="nav-link text-light fs-3 active" aria-current="page" href="inquiries.html">Inquiries</a>
+              <a class="nav-link text-light fs-3" href="./home.html">Home</a>
+              <a class="nav-link text-light fs-3" href="./product.html">Product</a>
+              <a class="nav-link text-light fs-3" href="./gallery.html">Gallery</a>
+              <a class="nav-link text-light fs-3"  href="./support.html">Support</a>
+              <a class="nav-link text-light fs-3 active" aria-current="page" href="./inquiries.html">Inquiries</a>
+              <a class="nav-link text-white-50 fs-3" href="/logout">Logout</a>
             </div>
           </div>
         </div>
@@ -36,21 +38,22 @@
 
     <section>
         <br><br><br>
-        <div class="container bg-secondary"> 
+        <div class="container">
+          <div class="row">
             <div class="mb-3 text-light col-sm-3">
-                <label for="firstname" class="form-label">First Name</label>
+                <label for="firstname" class="form-label required">First Name</label>
                 <input type="text" id="firstname" class="form-control">
             </div>
             <div class="mb-3 text-light col-sm-3">
-                <label for="lastName" class="form-label">Last Name</label>
+                <label for="lastName" class="form-label required">Last Name</label>
                 <input type="text" id="lastName" class="form-control">
             </div>
             <div class="mb-3 text-light col-sm-3">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label required">Email</label>
                 <input type="text" id="email" class="form-control">
             </div>
             <div class="mb-3 text-light col-sm-3">
-                <label for="phone" class="form-label">Phone</label>
+                <label for="phone" class="form-label required">Phone</label>
                 <input type="text" id="phone" class="form-control">
             </div>
             <div class="mb-3 text-light col-sm-3">
@@ -103,12 +106,42 @@
               <label for="vehicleyear" class="form-label">Vehicle Year</label>
               <input type="text" id="vehicleyear" class="form-control">
             </div>
+            <div class="mb-3 text-light col-sm-3">
+              <label for="wheel" class="form-label">Wheel</label>
+              <select id="wheel" class="form-select">
+                <option>FM-1</option>
+                <option>FM-2</option>
+                <option>FM-3</option>
+                <option>FM-4</option>
+                <option>FM-5</option>
+                <option>FM-6</option>
+                <option>FM-7</option>
+                <option>FM-8</option>
+                <option>F2-1</option>
+                <option>F2-2</option>
+                <option>F2-3</option>
+                <option>F2-4</option>
+                <option>F3-1</option>
+                <option>F3-2</option>
+                <option>F3-3</option>
+                <option>F3-4</option>
+                <option>FS-1</option>
+                <option>FS-2</option>
+                <option>FS-3</option>
+                <option>CF-1</option>
+                <option>CF-2</option>
+                <option>CF-3</option>
+                <option>CF-4</option>
+              </select>
+            </div>
             <div class="mb-3 text-light col-sm-12">
               <label for="comments" class="form-label">Comments</label>
               <input type="text" id="comments" class="form-control">
             </div>
+            <input type="button" value="s" id="s" />
+            <button type="button" class="btn btn-dark" id="send">Submit</button>
+          </div>
         </div>
-        <br><br><br>
     </section>
     <br><br><br><br><br><br><br><br>
     <footer class="container-fluid text-center"><p>© 2022 WheelX</p></footer>
