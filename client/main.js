@@ -72,7 +72,6 @@ if (document.getElementById('fms') !== null){
 if (document.getElementById('s') !== null){
     document.getElementById("s").addEventListener("click", async() => {
         const fname = document.getElementById('firstname').value;
-        console.log(first);
         const lname = document.getElementById('lastname').value;
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
@@ -81,22 +80,13 @@ if (document.getElementById('s') !== null){
         const vyear = document.getElementById('vehicleyear').value;
         const wheel = document.getElementById('wheel').value;
         const comments = document.getElementById('comments').value;
-        if (fname === null) {
-            alert("first name required");
+        if (fname === null || fname === '' || lname === null || lname === '' || email === null || email === '' || phone === null || phone === '') {
+            alert("Please fill out all required fields");
         }
-        if (lname === null) {
-            alert("last name required");
-        }
-        if (email === null) {
-            alert("email address required");
-        }
-        if (!email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+        else if (!email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
             alert("email address is not vaild");
         }
-        if (phone === null) {
-            alert("phone number required");
-        }
-        if (!email.toLowerCase().match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im)) {
+        else if (!email.toLowerCase().match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im)) {
             alert("phone number is not vaild");
         }
         const info = await crud.uploadInfo(fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments);
