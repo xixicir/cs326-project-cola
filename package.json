@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": "16.15.1"
+  },
   "directories": {
     "doc": "docs"
   },
   "scripts": {
+    "deploy": "copyfiles client/* server/* .env package*.json deploy",
+    "start": "node server/index.js",
+    "debug": "node --inspect-brk index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
