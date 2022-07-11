@@ -29,7 +29,7 @@ export class Database {
         vmodel varchar(30),
         vyear varchar(30),
         wheel varchar(30),
-        comments varchar(60),
+        comments varchar(30)
       );
 
       create table if not exists price (
