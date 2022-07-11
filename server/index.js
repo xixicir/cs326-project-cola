@@ -104,6 +104,16 @@ class Server {
   async initRoutes() {
     const self = this;
 
+    this.app.post('/info/upload', async (req, res) => {
+      try {
+        const { fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments } = req.query;
+        const info = await self.db.uploadInfo(fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments);
+        res.send(JSON.stringify(info));
+      } catch (err) {
+        res.status(500).send(err);
+      }
+    });
+
     this.app.get('/price/read', async (req, res) => {
       try {
         const { id } = req.query;

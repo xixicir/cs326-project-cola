@@ -27,6 +27,7 @@ export class Database {
         phone varchar(30),
         vmake varchar(30),
         vmodel varchar(30),
+        vyear varchar(30),
         wheel varchar(30),
         comments varchar(60),
       );
@@ -67,7 +68,7 @@ export class Database {
     await this.pool.end();
   }
 
-  async createPerson(fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments) {
+  async uploadInfo(fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments) {
     const queryText =
       'INSERT INTO info (fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *';
     const res = await this.client.query(queryText, [fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments]);
