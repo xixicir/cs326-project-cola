@@ -34,11 +34,11 @@ export class Database {
 
       create table if not exists price (
         id varchar(30) primary key,
-        price integer
+        cost integer
       );
       
       insert into 
-      price(id, price) 
+      price(id, cost) 
       values 
         ('fms19', 2800),
         ('fms20', 2900),
@@ -76,7 +76,7 @@ export class Database {
   }
 
   async readPrice(id) {
-    const queryText = 'SELECT * FROM price WHERE id = $1';
+    const queryText = 'SELECT cost FROM price WHERE id = $1';
     const res = await this.client.query(queryText, [id]);
     return res.rows;
   }

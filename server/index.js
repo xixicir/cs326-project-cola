@@ -133,10 +133,6 @@ class Server {
   async start() {
     await this.initRoutes();
     await this.initDb();
-    const port = process.env.PORT || 3000;
-    this.app.listen(port, () => {
-      console.log(`Server listening on port ${port}!`);
-    });
   }
 }
 
