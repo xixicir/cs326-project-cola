@@ -37,9 +37,9 @@ export class Database {
         cost integer
       );
       
-      insert into 
-      price(id, cost) 
-      values 
+      INSERT INTO price (id, cost)
+      SELECT newprice.id, newprice.cost
+      FROM ( VALUES         
         ('fms19', 2800),
         ('fms20', 2900),
         ('fms21', 3000),
@@ -59,7 +59,10 @@ export class Database {
         ('cfs19', 6300), 
         ('cfs20', 6500),
         ('cfs21', 6700),
-        ('cfs22', 6900);
+        ('cfs22', 6900) 
+      ) AS newprice (id, cost)
+      WHERE NOT EXISTS 
+      ( SELECT 1 FROM price AS p WHERE p.id = newprice.id );
     `;
     const res = await this.client.query(queryText);
   }
