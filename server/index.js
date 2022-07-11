@@ -42,7 +42,7 @@ app.get('/login', (req, res) =>
 app.post(
   '/login',
   auth.authenticate('local', {
-    successRedirect: '/private',
+    successRedirect: '/home',
     failureRedirect: '/login',
   })
 );
@@ -65,6 +65,7 @@ app.get('/register', (req, res) =>
   res.sendFile('client/index.html', { root: __dirname })
 );
 
+/*
 app.get(
   '/private',
   checkLoggedIn,
@@ -81,6 +82,98 @@ app.get(
       res.sendFile('client/subpages/home.html', { root: __dirname });
     } else {
       res.redirect('/private/');
+    }
+  }
+);
+*/
+
+app.get(
+  '/home',
+  checkLoggedIn,
+  (req, res) => {
+    res.redirect('/home/' + req.user);
+  }
+);
+app.get(
+  '/home/:userID/',
+  checkLoggedIn,
+  (req, res) => {
+    if (req.params.userID === req.user) {
+      res.sendFile('client/subpages/home.html', { root: __dirname });
+    } else {
+      res.redirect('/home/');
+    }
+  }
+);
+app.get(
+  '/product',
+  checkLoggedIn,
+  (req, res) => {
+    res.redirect('/product/' + req.user);
+  }
+);
+app.get(
+  '/product/:userID/',
+  checkLoggedIn,
+  (req, res) => {
+    if (req.params.userID === req.user) {
+      res.sendFile('client/subpages/product.html', { root: __dirname });
+    } else {
+      res.redirect('/product/');
+    }
+  }
+);
+app.get(
+  '/gallery',
+  checkLoggedIn,
+  (req, res) => {
+    res.redirect('/gallery/' + req.user);
+  }
+);
+app.get(
+  '/gallery/:userID/',
+  checkLoggedIn,
+  (req, res) => {
+    if (req.params.userID === req.user) {
+      res.sendFile('client/subpages/gallery.html', { root: __dirname });
+    } else {
+      res.redirect('/gallery/');
+    }
+  }
+);
+app.get(
+  '/support',
+  checkLoggedIn,
+  (req, res) => {
+    res.redirect('/support/' + req.user);
+  }
+);
+app.get(
+  '/support/:userID/',
+  checkLoggedIn,
+  (req, res) => {
+    if (req.params.userID === req.user) {
+      res.sendFile('client/subpages/support.html', { root: __dirname });
+    } else {
+      res.redirect('/support/');
+    }
+  }
+);
+app.get(
+  '/inquiries',
+  checkLoggedIn,
+  (req, res) => {
+    res.redirect('/inquiries/' + req.user);
+  }
+);
+app.get(
+  '/inquiries/:userID/',
+  checkLoggedIn,
+  (req, res) => {
+    if (req.params.userID === req.user) {
+      res.sendFile('client/subpages/inquiries.html', { root: __dirname });
+    } else {
+      res.redirect('/inquiries/');
     }
   }
 );
