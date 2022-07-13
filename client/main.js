@@ -33,32 +33,33 @@ if (document.getElementById('fms') !== null){
     }
 
     document.getElementById("19i").addEventListener("click", async() => {
-        document.getElementById("fmsprice").innerHTML = "$" + await crud.readPrice(fms19) + " ea.";
-        document.getElementById("f2sprice").innerHTML = "$" + await crud.readPrice(f2s19) + " ea.";
-        document.getElementById("f3sprice").innerHTML = "$" + await crud.readPrice(f3s19) + " ea.";
-        document.getElementById("fsprice").innerHTML = "$" + await crud.readPrice(fs19) + " ea.";
-        document.getElementById("cfsprice").innerHTML = "$" + await crud.readPrice(cfs19) + " ea.";
+        document.getElementById("fmsprice").innerHTML = "$" + await crud.readPrice('fms19') + " ea.";
+        document.getElementById("f2sprice").innerHTML = "$" + await crud.readPrice('f2s19') + " ea.";
+        document.getElementById("f3sprice").innerHTML = "$" + await crud.readPrice('f3s19') + " ea.";
+        document.getElementById("fsprice").innerHTML = "$" + await crud.readPrice('fs19') + " ea.";
+        document.getElementById("cfsprice").innerHTML = "$" + await crud.readPrice('cfs19') + " ea.";
     });
     document.getElementById("20i").addEventListener("click", async() => {
-        document.getElementById("fmsprice").innerHTML = "$" + await crud.readPrice(fms20) + " ea.";
-        document.getElementById("f2sprice").innerHTML = "$" + await crud.readPrice(f2s20) + " ea.";
-        document.getElementById("f3sprice").innerHTML = "$" + await crud.readPrice(f3s20) + " ea.";
-        document.getElementById("fsprice").innerHTML = "$" + await crud.readPrice(fs20) + " ea.";
-        document.getElementById("cfsprice").innerHTML = "$" + await crud.readPrice(cfs20) + " ea.";
+        document.getElementById("fmsprice").innerHTML = "$" + await crud.readPrice('fms20') + " ea.";
+        document.getElementById("f2sprice").innerHTML = "$" + await crud.readPrice('f2s20') + " ea.";
+        document.getElementById("f3sprice").innerHTML = "$" + await crud.readPrice('f3s20') + " ea.";
+        document.getElementById("fsprice").innerHTML = "$" + await crud.readPrice('fs20') + " ea.";
+        document.getElementById("cfsprice").innerHTML = "$" + await crud.readPrice('cfs20') + " ea.";
     });
     document.getElementById("21i").addEventListener("click", async() => {
-        document.getElementById("fmsprice").innerHTML = "$" + await crud.readPrice(fms21) + " ea.";
-        document.getElementById("f2sprice").innerHTML = "$" + await crud.readPrice(f2s21) + " ea.";
-        document.getElementById("f3sprice").innerHTML = "$" + await crud.readPrice(f3s21) + " ea.";
-        document.getElementById("fsprice").innerHTML = "$" + await crud.readPrice(fs21) + " ea.";
-        document.getElementById("cfsprice").innerHTML = "$" + await crud.readPrice(cfs21) + " ea.";
+        console.log(crud.readPrice('fms21'));
+        document.getElementById("fmsprice").innerHTML = "$" + await crud.readPrice('fms21') + " ea.";
+        document.getElementById("f2sprice").innerHTML = "$" + await crud.readPrice('f2s21') + " ea.";
+        document.getElementById("f3sprice").innerHTML = "$" + await crud.readPrice('f3s21') + " ea.";
+        document.getElementById("fsprice").innerHTML = "$" + await crud.readPrice('fs21') + " ea.";
+        document.getElementById("cfsprice").innerHTML = "$" + await crud.readPrice('cfs21') + " ea.";
     });
     document.getElementById("22i").addEventListener("click", async() => {
-        document.getElementById("fmsprice").innerHTML = "$" + await crud.readPrice(fms22) + " ea.";
-        document.getElementById("f2sprice").innerHTML = "$" + await crud.readPrice(f2s22) + " ea.";
-        document.getElementById("f3sprice").innerHTML = "$" + await crud.readPrice(f3s22) + " ea.";
-        document.getElementById("fsprice").innerHTML = "$" + await crud.readPrice(fs22) + " ea.";
-        document.getElementById("cfsprice").innerHTML = "$" + await crud.readPrice(cfs22) + " ea.";
+        document.getElementById("fmsprice").innerHTML = "$" + await crud.readPrice('fms22') + " ea.";
+        document.getElementById("f2sprice").innerHTML = "$" + await crud.readPrice('f2s22') + " ea.";
+        document.getElementById("f3sprice").innerHTML = "$" + await crud.readPrice('f3s22') + " ea.";
+        document.getElementById("fsprice").innerHTML = "$" + await crud.readPrice('fs22') + " ea.";
+        document.getElementById("cfsprice").innerHTML = "$" + await crud.readPrice('cfs22') + " ea.";
     });
     document.getElementById("reset").addEventListener("click", () => {
         document.getElementById("fmsprice").innerHTML = "$2800 ea. - $3100 ea.";
@@ -66,6 +67,7 @@ if (document.getElementById('fms') !== null){
         document.getElementById("f3sprice").innerHTML = "$3250 ea. - $3550 ea.";
         document.getElementById("fsprice").innerHTML = "$700 ea. - $850 ea.";
         document.getElementById("cfsprice").innerHTML = "$6300 ea. - $6900 ea.";
+        console.log(crud.readPrice('fms21'));
     });
 }
 
@@ -83,13 +85,14 @@ if (document.getElementById('s') !== null){
         if (fname === null || fname === '' || lname === null || lname === '' || email === null || email === '' || phone === null || phone === '') {
             alert("Please fill out all required fields");
         }
-        else if (!email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+        else if (email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)  === null) {
             alert("email address is not vaild");
         }
-        else if (!email.toLowerCase().match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im)) {
+        else if (phone.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im) === null) {
             alert("phone number is not vaild");
         }
         const info = await crud.uploadInfo(fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments);
         output.innerHTML = JSON.stringify(info);
+        alert("Submitted Successfully");
     });
 }

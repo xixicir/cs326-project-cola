@@ -47,10 +47,22 @@ app.post(
   })
 );
 
+
 app.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/login');
 });
+
+/*
+app.get('/logout', function(req, res, next) {
+  req.logout(function(err) {
+    if (err) { 
+      return next(err); 
+    }
+    res.redirect('/login');
+  });
+});
+*/
 
 app.post('/register', (req, res) => {
   const { username, password } = req.body;
