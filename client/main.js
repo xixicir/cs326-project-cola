@@ -47,7 +47,6 @@ if (document.getElementById('fms') !== null){
         document.getElementById("cfsprice").innerHTML = "$" + await crud.readPrice('cfs20') + " ea.";
     });
     document.getElementById("21i").addEventListener("click", async() => {
-        console.log(crud.readPrice('fms21'));
         document.getElementById("fmsprice").innerHTML = "$" + await crud.readPrice('fms21') + " ea.";
         document.getElementById("f2sprice").innerHTML = "$" + await crud.readPrice('f2s21') + " ea.";
         document.getElementById("f3sprice").innerHTML = "$" + await crud.readPrice('f3s21') + " ea.";
@@ -67,7 +66,6 @@ if (document.getElementById('fms') !== null){
         document.getElementById("f3sprice").innerHTML = "$3250 ea. - $3550 ea.";
         document.getElementById("fsprice").innerHTML = "$700 ea. - $850 ea.";
         document.getElementById("cfsprice").innerHTML = "$6300 ea. - $6900 ea.";
-        console.log(crud.readPrice('fms21'));
     });
 }
 

@@ -47,22 +47,9 @@ app.post(
   })
 );
 
-
 app.get('/logout', (req, res) => {
-  req.logout();
   res.redirect('/login');
 });
-
-/*
-app.get('/logout', function(req, res, next) {
-  req.logout(function(err) {
-    if (err) { 
-      return next(err); 
-    }
-    res.redirect('/login');
-  });
-});
-*/
 
 app.post('/register', (req, res) => {
   const { username, password } = req.body;
@@ -76,28 +63,6 @@ app.post('/register', (req, res) => {
 app.get('/register', (req, res) =>
   res.sendFile('client/index.html', { root: __dirname })
 );
-
-/*
-app.get(
-  '/private',
-  checkLoggedIn,
-  (req, res) => {
-    res.redirect('/private/' + req.user);
-  }
-);
-
-app.get(
-  '/private/:userID/',
-  checkLoggedIn,
-  (req, res) => {
-    if (req.params.userID === req.user) {
-      res.sendFile('client/subpages/home.html', { root: __dirname });
-    } else {
-      res.redirect('/private/');
-    }
-  }
-);
-*/
 
 app.get(
   '/home',
@@ -212,6 +177,7 @@ class Server {
     this.app.post('/info/upload', async (req, res) => {
       try {
         const { fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments } = req.query;
+        console.log(await req.query);
         const info = await self.db.uploadInfo(fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments);
         res.send(JSON.stringify(info));
       } catch (err) {
@@ -222,6 +188,7 @@ class Server {
     this.app.get('/price/read', async (req, res) => {
       try {
         const { id } = req.query;
+        console.log(await req.query);
         const price = await self.db.readPrice(id);
         res.send(JSON.stringify(price));
       } catch (err) {
