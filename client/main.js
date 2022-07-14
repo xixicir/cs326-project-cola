@@ -89,7 +89,9 @@ if (document.getElementById('s') !== null){
         else if (phone.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im) === null) {
             alert("phone number is not vaild");
         }
-        const info = await crud.uploadInfo(fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments);
-        alert("Submitted Successfully");
+        else {
+            const info = await crud.uploadInfo(fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments);
+            alert("Submitted Successfully");
+        }
     });
 }
