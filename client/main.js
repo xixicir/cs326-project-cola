@@ -90,7 +90,6 @@ if (document.getElementById('s') !== null){
             alert("phone number is not vaild");
         }
         const info = await crud.uploadInfo(fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments);
-        output.innerHTML = JSON.stringify(info);
         alert("Submitted Successfully");
     });
 }

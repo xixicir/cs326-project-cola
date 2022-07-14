@@ -16,12 +16,36 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: false,
 };
+const database = new Database(process.env.DATABASE_URL);
+await database.connect();
 
 app.use(expressSession(sessionConfig));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('client'));
 auth.configure(app);
+
+app.post('/info/upload', async (req, res) => {
+  try {
+    const { fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments } = req.query;
+    console.log(await req.query);
+    const info = await database.uploadInfo(fname, lname, email, phone, vmake, vmodel, vyear, wheel, comments);
+    res.send(JSON.stringify(info));
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+app.get('/price/read', async (req, res) => {
+  try {
+    const { id } = req.query;
+    console.log(await req.query);
+    const price = await database.readPrice(id);
+    res.send(JSON.stringify(price));
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
 
 function checkLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
@@ -163,7 +187,7 @@ app.listen(port, () => {
   console.log(`App now listening at http://localhost:${port}`);
 });
 
-
+/*
 class Server {
   constructor(dburl) {
     this.dburl = dburl;
@@ -210,3 +234,4 @@ class Server {
 
 const server = new Server(process.env.DATABASE_URL);
 server.start();
+*/
